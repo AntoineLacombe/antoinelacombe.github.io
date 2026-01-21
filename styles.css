@@ -1,0 +1,20 @@
+.contact-buttons{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin: 10px 0 0 0;
+}
+
+.contact-buttons .btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+
+
+.intro-justify p{
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
