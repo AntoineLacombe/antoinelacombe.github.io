@@ -34,3 +34,131 @@
 #quarto-document-content h4{
   text-align: left;
 }
+
+/* colors */
+
+/* --- Links same color as navbar (#2C3E50) --- */
+#quarto-document-content a{
+  color: #2C3E50;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+/* Optional: keep visited links consistent */
+#quarto-document-content a:visited{
+  color: #2C3E50;
+}
+
+#quarto-document-content h1,
+#quarto-document-content h2,
+#quarto-document-content h3,
+#quarto-document-content h4{
+  color: #2C3E50;
+}
+
+/* --- TOC styling (match #2C3E50) --- */
+/* ===== Force TOC colors (kill the green) ===== */
+
+/* Scope to the margin/sidebar TOC (Quarto) */
+#quarto-margin-sidebar nav#TOC,
+#quarto-margin-sidebar nav[role="doc-toc"],
+.sidebar nav[role="doc-toc"]{
+  --bs-link-color: #2C3E50 !important;
+  --bs-link-hover-color: #1f2d3a !important;
+  --bs-primary: #2C3E50 !important;   /* this usually controls the "active" accent */
+}
+
+/* Regular TOC links */
+#quarto-margin-sidebar nav#TOC a,
+#quarto-margin-sidebar nav[role="doc-toc"] a{
+  color: #2C3E50 !important;
+  text-decoration: none !important;
+}
+
+/* Hover */
+#quarto-margin-sidebar nav#TOC a:hover,
+#quarto-margin-sidebar nav[role="doc-toc"] a:hover{
+  color: #1f2d3a !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
+}
+
+/* Active item (the green culprit) */
+#quarto-margin-sidebar nav#TOC .toc-active > a,
+#quarto-margin-sidebar nav[role="doc-toc"] .toc-active > a{
+  color: #2C3E50 !important;
+  font-weight: 600 !important;
+  background: transparent !important;     /* removes any green fill */
+  border-left: 3px solid #2C3E50 !important;
+  padding-left: .6rem !important;
+}
+
+/* If your theme uses an "active" class directly */
+#quarto-margin-sidebar nav#TOC a.active,
+#quarto-margin-sidebar nav[role="doc-toc"] a.active{
+  color: #2C3E50 !important;
+  background: transparent !important;
+}
+
+/* ===== Buttons: readable hover/active (match #2C3E50) ===== */
+
+/* Outline primary: default */
+.btn-outline-primary{
+  color: #2C3E50 !important;
+  border-color: #2C3E50 !important;
+}
+
+/* Outline primary: hover + active + focus => dark background, WHITE text */
+.btn-outline-primary:hover,
+.btn-outline-primary:active,
+.btn-outline-primary:focus{
+  background-color: #2C3E50 !important;
+  border-color: #2C3E50 !important;
+  color: #ffffff !important;
+}
+
+/* Some themes put the active state on "show > .btn-outline-primary.dropdown-toggle" */
+.show > .btn-outline-primary.dropdown-toggle{
+  background-color: #2C3E50 !important;
+  border-color: #2C3E50 !important;
+  color: #ffffff !important;
+}
+
+/* Ensure icons inside buttons also turn white */
+.btn-outline-primary:hover *,
+.btn-outline-primary:active *,
+.btn-outline-primary:focus *{
+  color: #ffffff !important;
+}
+
+/* Optional: nicer focus ring */
+.btn:focus{
+  box-shadow: 0 0 0 .2rem rgba(44, 62, 80, 0.25) !important;
+}
+
+/* ===== TOC: kill the green "you are here" bar ===== */
+
+/* Cover the common Quarto TOC containers */
+#quarto-margin-sidebar nav[role="doc-toc"] a.active,
+#quarto-margin-sidebar nav[role="doc-toc"] .toc-active > a,
+#quarto-margin-sidebar nav#TOC a.active,
+#quarto-margin-sidebar nav#TOC .toc-active > a{
+  color: #2C3E50 !important;
+  background: transparent !important;
+  border-left: 3px solid #2C3E50 !important;          /* our bar */
+  box-shadow: none !important;                         /* remove theme bar */
+}
+
+/* Some themes draw the bar with an inset shadow */
+#quarto-margin-sidebar nav[role="doc-toc"] a.active,
+#quarto-margin-sidebar nav[role="doc-toc"] .toc-active > a{
+  box-shadow: inset 3px 0 0 #2C3E50 !important;        /* override if used */
+}
+
+/* Some themes draw the bar with a pseudo-element */
+#quarto-margin-sidebar nav[role="doc-toc"] a.active::before,
+#quarto-margin-sidebar nav[role="doc-toc"] .toc-active > a::before,
+#quarto-margin-sidebar nav#TOC a.active::before,
+#quarto-margin-sidebar nav#TOC .toc-active > a::before{
+  background-color: #2C3E50 !important;
+}
