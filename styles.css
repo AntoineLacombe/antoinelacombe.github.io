@@ -162,3 +162,76 @@
 #quarto-margin-sidebar nav#TOC .toc-active > a::before{
   background-color: #2C3E50 !important;
 }
+
+/* Ensure navbar content sits above the overlay */
+.navbar .container,
+.navbar .navbar-collapse {
+  position: relative;
+  z-index: 1;
+}
+
+
+.quote,
+.quote p,
+.quote blockquote {
+  text-align: center !important;
+}
+
+.quote {
+  margin: 3rem auto 2rem;
+  max-width: 760px;
+
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(0,0,0,.65);
+}
+
+/* Remove default margins that can make it look "off-center" */
+.quote p {
+  margin: 0.25rem 0;
+}
+
+.btn i.bi {
+  margin-right: 0.4rem;
+  vertical-align: -0.1em;
+}
+
+
+/* keywords */
+
+/* Tag cloud container */
+.tag-cloud{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 1.5rem 0 2rem;
+
+  /* forces true row spacing */
+  line-height: 2rem; /* increases distance between rows */
+}
+
+/* Make tags closer horizontally + control vertical rhythm */
+.tag-cloud .tag{
+  margin-right: 0.35rem;   /* closer keywords */
+  margin-bottom: 0.9rem;   /* modest bottom gap */
+}
+
+
+.tag {
+  font-size: 0.85rem;
+  padding: 0.22rem 0.6rem;     /* slightly tighter */
+  border-radius: 999px;
+  background: rgba(44, 62, 80, 0.08);
+  color: #2C3E50;
+  font-weight: 400;            /* 300 is very light; 400 reads cleaner */
+  line-height: 1.4;            /* better vertical balance */
+  white-space: nowrap;
+
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.tag:hover{
+  transform: translateY(-1px);
+  background: rgba(44, 62, 80, 0.15);
+}
