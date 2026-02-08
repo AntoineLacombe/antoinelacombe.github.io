@@ -187,7 +187,6 @@
   color: rgba(0,0,0,.65);
 }
 
-/* Remove default margins that can make it look "off-center" */
 .quote p {
   margin: 0.25rem 0;
 }
@@ -199,33 +198,27 @@
 
 
 /* keywords */
-
-/* Tag cloud container */
 .tag-cloud{
   display: flex;
   flex-wrap: wrap;
   max-width: 900px;
   margin: 1.5rem 0 2rem;
+  line-height: 2rem; 
 
-  /* forces true row spacing */
-  line-height: 2rem; /* increases distance between rows */
-}
-
-/* Make tags closer horizontally + control vertical rhythm */
 .tag-cloud .tag{
-  margin-right: 0.35rem;   /* closer keywords */
-  margin-bottom: 0.9rem;   /* modest bottom gap */
+  margin-right: 0.35rem;  
+  margin-bottom: 0.9rem;   
 }
 
 
 .tag {
   font-size: 0.85rem;
-  padding: 0.22rem 0.6rem;     /* slightly tighter */
+  padding: 0.22rem 0.6rem;     
   border-radius: 999px;
   background: rgba(44, 62, 80, 0.08);
   color: #2C3E50;
-  font-weight: 400;            /* 300 is very light; 400 reads cleaner */
-  line-height: 1.4;            /* better vertical balance */
+  font-weight: 400;            
+  line-height: 1.4;           
   white-space: nowrap;
 
   transition: transform 0.15s ease, background-color 0.15s ease;
@@ -235,5 +228,3 @@
   transform: translateY(-1px);
   background: rgba(44, 62, 80, 0.15);
 }
-
-
