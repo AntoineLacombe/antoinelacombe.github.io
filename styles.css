@@ -228,3 +228,18 @@
   transform: translateY(-1px);
   background: rgba(44, 62, 80, 0.15);
 }
+
+.jury-table table {
+  width: auto;
+  table-layout: auto;
+}
+
+.jury-table th,
+.jury-table td {
+  white-space: nowrap;
+}
+
+.jury-table td:nth-child(3),
+.jury-table th:nth-child(3) {
+  white-space: normal;
+}
