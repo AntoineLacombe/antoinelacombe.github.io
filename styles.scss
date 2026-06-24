@@ -1,0 +1,1144 @@
+/*-- scss:defaults --*/
+
+/* ============================================================
+   Professional academic theme
+   ============================================================ */
+
+$primary: #4b2942;        // deep aubergine
+$secondary: #7a6f75;
+$body-bg: #ffffff;        // warm ivory
+$body-color: #252124;
+$link-color: #4b2942;
+$link-hover-color: #b08a3c; // muted gold
+$border-color: #e2d8cf;
+
+$font-family-sans-serif: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+  Roboto, "Helvetica Neue", Arial, sans-serif;
+
+$headings-font-weight: 650;
+$headings-color: #4b2942;
+
+$navbar-bg: $primary;
+$navbar-fg: #ffffff;
+
+$code-color: #8a4b2a;
+
+/* ---- color around images --- */
+
+.aubergine-border {
+  border: 2px solid #4b2942;
+  padding: 3px;
+  border-radius: 0.45rem;
+}
+
+/*-- scss:rules --*/
+
+/* ============================================================
+   Global layout
+   ============================================================ */
+
+:root {
+  --site-accent: #4b2942;
+  --site-accent-soft: #f1e8ee;
+  --site-gold: #b08a3c;
+  --site-text: var(--bs-body-color);
+  --site-bg: var(--bs-body-bg);
+  --site-muted: #786d74;
+  --site-border: #e2d8cf;
+  --site-soft-bg: #f4ede7;
+  --site-hover-bg: #ece2da;
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.65;
+  letter-spacing: 0.005em;
+  background-color: var(--site-bg);
+  color: var(--site-text);
+}
+
+#quarto-content {
+  padding-top: 1.5rem;
+}
+
+#quarto-document-content {
+  max-width: 880px;
+}
+
+
+/* ============================================================
+   Typography
+   ============================================================ */
+
+#quarto-document-content h1,
+#quarto-document-content h2,
+#quarto-document-content h3,
+#quarto-document-content h4 {
+  color: #1f2d3a;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+#quarto-document-content h1 {
+  font-size: 2.15rem;
+  margin-bottom: 1.25rem;
+}
+
+#quarto-document-content h2 {
+  font-size: 1.55rem;
+  margin-top: 2.75rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--site-border);
+}
+
+#quarto-document-content h3 {
+  font-size: 1.25rem;
+  margin-top: 2rem;
+}
+
+.intro-justify p,
+#quarto-document-content p {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
+#quarto-document-content li,
+#quarto-document-content h1,
+#quarto-document-content h2,
+#quarto-document-content h3,
+#quarto-document-content h4 {
+  text-align: left;
+}
+
+
+/* ============================================================
+   Links
+   ============================================================ */
+
+#quarto-document-content a:not(.btn) {
+  color: var(--site-accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+#quarto-document-content a:not(.btn):visited {
+  color: var(--site-accent);
+}
+
+#quarto-document-content a:not(.btn):hover {
+  color: var(--site-gold);
+}
+
+
+/* ============================================================
+   Navbar
+   ============================================================ */
+
+.navbar {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  letter-spacing: 0.01em;
+}
+
+.navbar-title {
+  font-weight: 650;
+}
+
+.navbar-nav .nav-link {
+  font-weight: 500;
+}
+
+.navbar .navbar-collapse,
+.navbar .container {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ============================================================
+   Contact buttons
+   ============================================================ */
+
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 1rem 0 0 0;
+}
+
+.contact-buttons .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn i.bi {
+  margin-right: 0.4rem;
+  vertical-align: -0.1em;
+}
+
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+
+.btn-outline-primary {
+  color: var(--site-accent) !important;
+  border-color: var(--site-accent) !important;
+  background-color: transparent !important;
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+  font-weight: 500;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:active,
+.btn-outline-primary:focus,
+.show > .btn-outline-primary.dropdown-toggle {
+  background-color: var(--site-accent) !important;
+  border-color: var(--site-accent) !important;
+  color: #ffffff !important;
+}
+
+.btn-outline-primary:hover *,
+.btn-outline-primary:active *,
+.btn-outline-primary:focus * {
+  color: #ffffff !important;
+}
+
+.btn:focus {
+  box-shadow: 0 0 0 0.2rem rgba(36, 52, 71, 0.25) !important;
+}
+
+
+/* ============================================================
+   TOC
+   ============================================================ */
+
+#quarto-margin-sidebar nav#TOC,
+#quarto-margin-sidebar nav[role="doc-toc"],
+.sidebar nav[role="doc-toc"] {
+  font-size: 0.9rem;
+}
+
+#quarto-margin-sidebar nav#TOC a,
+#quarto-margin-sidebar nav[role="doc-toc"] a {
+  color: var(--site-muted) !important;
+  text-decoration: none !important;
+}
+
+#quarto-margin-sidebar nav#TOC a:hover,
+#quarto-margin-sidebar nav[role="doc-toc"] a:hover {
+  color: var(--site-accent) !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
+}
+
+#quarto-margin-sidebar nav#TOC .toc-active > a,
+#quarto-margin-sidebar nav[role="doc-toc"] .toc-active > a,
+#quarto-margin-sidebar nav#TOC a.active,
+#quarto-margin-sidebar nav[role="doc-toc"] a.active {
+  color: var(--site-accent) !important;
+  font-weight: 650 !important;
+  background: transparent !important;
+  border-left: 3px solid var(--site-accent) !important;
+  padding-left: 0.6rem !important;
+  box-shadow: none !important;
+}
+
+#quarto-margin-sidebar nav[role="doc-toc"] a.active::before,
+#quarto-margin-sidebar nav[role="doc-toc"] .toc-active > a::before,
+#quarto-margin-sidebar nav#TOC a.active::before,
+#quarto-margin-sidebar nav#TOC .toc-active > a::before {
+  background-color: var(--site-accent) !important;
+}
+
+
+/* ============================================================
+   Quote block
+   ============================================================ */
+
+.quote,
+.quote p,
+.quote blockquote {
+  text-align: center !important;
+}
+
+.quote {
+  margin: 3rem auto 2rem;
+  max-width: 760px;
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--site-muted);
+}
+
+.quote p {
+  margin: 0.25rem 0;
+}
+
+
+/* ============================================================
+   Keywords / tag cloud
+   ============================================================ */
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 1.5rem 0 2rem;
+  line-height: 2rem;
+}
+
+.tag-cloud .tag {
+  margin-right: 0.35rem;
+  margin-bottom: 0.9rem;
+}
+
+.tag {
+  font-size: 0.85rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  background: var(--site-soft-bg);
+  border: 1px solid var(--site-border);
+  color: var(--site-text);
+  font-weight: 450;
+  line-height: 1.4;
+  white-space: nowrap;
+  transition: transform 0.15s ease, background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.tag:hover {
+  transform: translateY(-1px);
+  background: var(--site-hover-bg);
+  border-color: var(--site-accent);
+}
+
+
+/* ============================================================
+   Callout notes
+   ============================================================ */
+
+.callout {
+  border-radius: 0.45rem;
+  border-color: var(--site-border);
+  background-color: #ffffff;
+}
+
+.callout-note {
+  border-left-color: var(--site-accent) !important;
+}
+
+.callout-note .callout-header {
+  background-color: transparent !important;
+  color: var(--site-text) !important;
+  border-bottom: 1px solid var(--site-border);
+}
+
+.callout-note .callout-title-container {
+  color: var(--site-text) !important;
+  font-weight: 650;
+}
+
+.callout-note .callout-icon-container {
+  color: var(--site-accent) !important;
+}
+
+.callout-note .callout-body,
+.callout-note .callout-body-container {
+  background-color: transparent !important;
+  color: var(--site-text) !important;
+}
+
+
+/* ============================================================
+   Tables
+   ============================================================ */
+
+table {
+  font-size: 0.95rem;
+}
+
+thead {
+  border-bottom: 2px solid var(--site-accent);
+}
+
+.table > :not(caption) > * > * {
+  border-bottom-color: var(--site-border);
+}
+
+.jury-table table {
+  width: auto;
+  table-layout: auto;
+}
+
+.jury-table th,
+.jury-table td {
+  white-space: nowrap;
+}
+
+.jury-table td:nth-child(3),
+.jury-table th:nth-child(3) {
+  white-space: normal;
+}
+
+
+/* ============================================================
+   Code
+   ============================================================ */
+
+pre,
+code {
+  border-radius: 0.35rem;
+}
+
+pre.sourceCode {
+  border: 1px solid var(--site-border);
+  background-color: #f5f3ee;
+}
+
+
+/* ============================================================
+   Images
+   ============================================================ */
+
+img {
+  max-width: 100%;
+}
+
+.quarto-figure img {
+  border-radius: 0.35rem;
+}
+
+
+/* ============================================================
+   Footer
+   ============================================================ */
+
+.nav-footer {
+  border-top: 1px solid var(--site-border);
+  font-size: 0.9rem;
+  color: var(--site-muted);
+}
+
+
+/* ============================================================
+   Mobile refinement
+   ============================================================ */
+
+@media (max-width: 768px) {
+  #quarto-document-content {
+    max-width: 100%;
+  }
+
+  #quarto-document-content h1 {
+    font-size: 1.8rem;
+  }
+
+  #quarto-document-content h2 {
+    font-size: 1.35rem;
+  }
+
+  .contact-buttons {
+    justify-content: flex-start;
+  }
+}
+
+/* ============================================================
+   CV timeline
+   ============================================================ */
+
+.cv-timeline {
+  position: relative;
+  margin: 2.5rem 0 3rem;
+  padding-left: 0.5rem;
+}
+
+/* Main vertical line */
+.cv-timeline::before {
+  content: "";
+  position: absolute;
+  top: 0.4rem;
+  bottom: 0.4rem;
+  left: 8.25rem;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    #4b2942,
+    rgba(176, 138, 60, 0.9),
+    rgba(75, 41, 66, 0.35)
+  );
+  border-radius: 999px;
+}
+
+/* One timeline row */
+.cv-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 7rem minmax(0, 1fr);
+  gap: 2.4rem;
+  margin-bottom: 2.2rem;
+}
+
+/* Timeline dot */
+.cv-item::before {
+  content: "";
+  position: absolute;
+  top: 0.45rem;
+  left: 7.57rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: #fbf7f2;
+  border: 3px solid #4b2942;
+  box-shadow: 0 0 0 5px rgba(75, 41, 66, 0.08);
+  z-index: 2;
+}
+
+/* Date column */
+.cv-date {
+  font-weight: 750;
+  color: #4b2942;
+  font-size: 0.92rem;
+  padding-top: 0.25rem;
+  text-align: right;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* Main content card */
+.cv-content {
+  background:
+    radial-gradient(circle at top right, rgba(176, 138, 60, 0.11), transparent 36%),
+    rgba(255, 255, 255, 0.76);
+  border: 1px solid rgba(75, 41, 66, 0.14);
+  border-radius: 1rem;
+  padding: 1.2rem 1.35rem;
+  box-shadow: 0 12px 34px rgba(75, 41, 66, 0.07);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.cv-content:hover {
+  transform: translateY(-3px);
+  border-color: rgba(176, 138, 60, 0.55);
+  box-shadow: 0 18px 42px rgba(75, 41, 66, 0.12);
+}
+
+.cv-content h3 {
+  margin-top: 0 !important;
+  margin-bottom: 0.55rem;
+  font-size: 1.12rem !important;
+  color: #3a2334 !important;
+  line-height: 1.25;
+}
+
+.cv-content p {
+  margin-bottom: 0.45rem;
+  text-align: left !important;
+  hyphens: none !important;
+}
+
+/* ============================================================
+   Nested visiting researcher blocks
+   ============================================================ */
+
+.cv-subitem {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.85rem;
+  align-items: start;
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  border-left: 3px solid #b08a3c;
+  border-radius: 0.75rem;
+  background:
+    linear-gradient(90deg, rgba(176, 138, 60, 0.08), transparent 65%),
+    rgba(251, 247, 242, 0.88);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  text-align: left !important;
+  hyphens: none !important;
+  overflow: visible !important;
+}
+
+.cv-subitem p {
+  margin: 0 !important;
+  text-align: left !important;
+  hyphens: none !important;
+}
+
+.cv-subdate {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-width: 3.2rem;
+  padding: 0.23rem 0.55rem;
+  border-radius: 999px;
+  font-weight: 750;
+  color: #4b2942;
+  background: rgba(176, 138, 60, 0.15);
+  border: 1px solid rgba(176, 138, 60, 0.38);
+  white-space: nowrap;
+}
+
+.cv-subcontent {
+  min-width: 0;
+  color: var(--site-text);
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.cv-subcontent strong {
+  color: #3a2334;
+  font-weight: 700;
+}
+
+/* ============================================================
+   Mobile
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .cv-timeline {
+    padding-left: 0;
+  }
+
+  .cv-timeline::before {
+    left: 0.45rem;
+  }
+
+  .cv-item {
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+    padding-left: 1.8rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .cv-item::before {
+    left: 0;
+  }
+
+  .cv-date {
+    text-align: left;
+    padding-top: 0;
+    font-size: 0.88rem;
+  }
+
+  .cv-content {
+    padding: 1rem 1.05rem;
+  }
+
+  .cv-content h3 {
+    font-size: 1.02rem !important;
+  }
+
+  .cv-subitem {
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+  }
+
+  .cv-subdate {
+    min-width: auto;
+  }
+}
+
+/* ============================================================
+   Teaching cards — compact and polished
+   ============================================================ */
+
+.teaching-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.95rem;
+  margin: 1.6rem 0 2.6rem;
+}
+
+.teaching-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 145px;
+  padding: 1rem 1.1rem 1.05rem 1.2rem;
+  border: 1px solid rgba(75, 41, 66, 0.13);
+  border-radius: 0.85rem;
+  background:
+    radial-gradient(circle at top right, rgba(176, 138, 60, 0.10), transparent 34%),
+    rgba(255, 255, 255, 0.78);
+  box-shadow: 0 10px 26px rgba(75, 41, 66, 0.055);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease;
+}
+
+/* Thin aubergine/gold side line */
+.teaching-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: linear-gradient(
+    180deg,
+    #4b2942,
+    rgba(176, 138, 60, 0.9)
+  );
+}
+
+.teaching-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(176, 138, 60, 0.45);
+  box-shadow: 0 15px 34px rgba(75, 41, 66, 0.10);
+}
+
+/* Small year badge */
+.teaching-year {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin-bottom: 0.7rem;
+  padding: 0.16rem 0.48rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.015em;
+  color: #4b2942;
+  background: rgba(176, 138, 60, 0.11);
+  border: 1px solid rgba(176, 138, 60, 0.32);
+  white-space: nowrap;
+}
+
+/* Important: Quarto wraps the year in a paragraph */
+.teaching-year p {
+  margin: 0 !important;
+  line-height: 1.2 !important;
+}
+
+/* Teaching title */
+.teaching-content h3 {
+  margin-top: 0 !important;
+  margin-bottom: 0.45rem;
+  font-size: 0.98rem !important;
+  line-height: 1.25;
+  color: #3a2334 !important;
+}
+
+/* Teaching text */
+.teaching-content p {
+  margin: 0 0 0.25rem 0 !important;
+  text-align: left !important;
+  hyphens: none !important;
+  line-height: 1.42;
+  font-size: 0.92rem;
+}
+
+.teaching-content strong {
+  color: #4b2942;
+  font-weight: 720;
+}
+
+/* Subtle staggered entrance */
+.teaching-card {
+  animation: teachingCardIn 0.45s ease-out both;
+}
+
+.teaching-card:nth-child(2) {
+  animation-delay: 0.06s;
+}
+
+.teaching-card:nth-child(3) {
+  animation-delay: 0.12s;
+}
+
+.teaching-card:nth-child(4) {
+  animation-delay: 0.18s;
+}
+
+@keyframes teachingCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .teaching-card {
+    animation: none !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .teaching-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .teaching-card {
+    min-height: auto;
+    padding: 0.95rem 1rem 1rem 1.05rem;
+  }
+
+  .teaching-content h3 {
+    font-size: 0.96rem !important;
+  }
+
+  .teaching-content p {
+    font-size: 0.9rem;
+  }
+}
+
+/* ============================================================
+   Publication cards
+   Articles, working papers, projects, thesis, peer review
+   ============================================================ */
+
+.publication-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin: 1.8rem 0 3rem;
+}
+
+/* Main card */
+.publication-card {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+  padding: 1.15rem 1.25rem;
+  border: 1px solid rgba(75, 41, 66, 0.14);
+  border-radius: 1rem;
+  background:
+    radial-gradient(circle at top right, rgba(176, 138, 60, 0.10), transparent 35%),
+    rgba(255, 255, 255, 0.78);
+  box-shadow: 0 12px 34px rgba(75, 41, 66, 0.07);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease;
+  animation: publicationCardIn 0.5s ease-out both;
+}
+
+.publication-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(176, 138, 60, 0.48);
+  box-shadow: 0 18px 42px rgba(75, 41, 66, 0.11);
+}
+
+.publication-card:nth-child(2) {
+  animation-delay: 0.08s;
+}
+
+.publication-card:nth-child(3) {
+  animation-delay: 0.14s;
+}
+
+/* Left visual column */
+.publication-cover-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Journal covers */
+.publication-cover {
+  width: 92px;
+  max-width: 92px;
+  border-radius: 0.45rem;
+  border: 1px solid rgba(75, 41, 66, 0.15);
+  box-shadow: 0 9px 22px rgba(75, 41, 66, 0.12);
+  background: #ffffff;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.publication-cover:hover {
+  transform: rotate(-1.5deg) scale(1.035);
+  box-shadow: 0 13px 30px rgba(75, 41, 66, 0.17);
+}
+
+/* Small icons for working papers / thesis */
+.publication-icon {
+  width: 44px;
+  max-width: 44px;
+  padding: 0.35rem;
+  border-radius: 0.7rem;
+  background:
+    radial-gradient(circle at top right, rgba(176, 138, 60, 0.16), transparent 42%),
+    rgba(251, 247, 242, 0.92);
+  border: 1px solid rgba(75, 41, 66, 0.12);
+  box-shadow: 0 6px 16px rgba(75, 41, 66, 0.08);
+}
+
+/* Project logos */
+.project-logo {
+  width: 74px;
+  max-width: 74px;
+  max-height: 58px;
+  object-fit: contain;
+  padding: 0.4rem;
+  border-radius: 0.65rem;
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(75, 41, 66, 0.12);
+  box-shadow: 0 6px 16px rgba(75, 41, 66, 0.08);
+}
+
+/* More compact left column for icon-based cards */
+.working-paper-card,
+.thesis-card,
+.peer-review-card {
+  grid-template-columns: 62px minmax(0, 1fr);
+}
+
+/* Slightly wider for project logos */
+.project-card {
+  grid-template-columns: 88px minmax(0, 1fr);
+}
+
+/* Card variants */
+.working-paper-card {
+  background:
+    radial-gradient(circle at top right, rgba(176, 138, 60, 0.10), transparent 35%),
+    linear-gradient(90deg, rgba(75, 41, 66, 0.035), transparent 25%),
+    rgba(255, 255, 255, 0.78);
+}
+
+.project-card {
+  background:
+    radial-gradient(circle at top right, rgba(176, 138, 60, 0.13), transparent 36%),
+    radial-gradient(circle at bottom left, rgba(75, 41, 66, 0.06), transparent 34%),
+    rgba(255, 255, 255, 0.80);
+}
+
+.thesis-card {
+  border-color: rgba(75, 41, 66, 0.18);
+  background:
+    radial-gradient(circle at top right, rgba(176, 138, 60, 0.13), transparent 36%),
+    linear-gradient(90deg, rgba(75, 41, 66, 0.04), transparent 28%),
+    rgba(255, 255, 255, 0.82);
+}
+
+/* Text content */
+.publication-content h3 {
+  margin-top: 0 !important;
+  margin-bottom: 0.45rem;
+  font-size: 1.04rem !important;
+  line-height: 1.32;
+  color: #3a2334 !important;
+}
+
+.publication-content p {
+  text-align: left !important;
+  hyphens: none !important;
+}
+
+.publication-meta {
+  margin-bottom: 0.65rem;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--site-muted);
+}
+
+.publication-meta p {
+  margin: 0 !important;
+}
+
+/* Keyword tags */
+.publication-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.38rem;
+  margin: 0.6rem 0 0.85rem;
+}
+
+.pub-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.18rem 0.48rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 650;
+  line-height: 1.2;
+  color: #4b2942;
+  background: rgba(176, 138, 60, 0.12);
+  border: 1px solid rgba(176, 138, 60, 0.30);
+}
+
+/* Project details */
+.project-details {
+  margin: 0.7rem 0 0.9rem;
+  padding: 0.7rem 0.8rem;
+  border-left: 3px solid #b08a3c;
+  border-radius: 0.65rem;
+  background: rgba(251, 247, 242, 0.78);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.project-details p {
+  margin: 0 !important;
+  text-align: left !important;
+  hyphens: none !important;
+}
+
+/* Callouts inside publication cards */
+.publication-card .callout {
+  margin: 0.75rem 0 0.85rem;
+  border-radius: 0.75rem;
+  border-color: rgba(75, 41, 66, 0.12);
+  background: rgba(251, 247, 242, 0.68);
+}
+
+.publication-card .callout-note {
+  border-left-color: #4b2942 !important;
+}
+
+.publication-card .callout-header {
+  padding: 0.52rem 0.75rem;
+  background: transparent !important;
+  border-bottom: 1px solid rgba(75, 41, 66, 0.10);
+}
+
+.publication-card .callout-title-container {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: #4b2942 !important;
+}
+
+.publication-card .callout-body {
+  padding: 0.72rem 0.85rem;
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.publication-card .callout-body p {
+  margin-bottom: 0.55rem;
+  text-align: justify !important;
+}
+
+/* Buttons */
+.publication-card .btn {
+  margin-top: 0.1rem;
+}
+
+.publication-card .btn + .btn {
+  margin-left: 0.35rem;
+}
+
+/* Peer review icon */
+.peer-review-icon {
+  width: 46px;
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #ffffff;
+  background: linear-gradient(135deg, #4b2942, #b08a3c);
+  font-size: 1.15rem;
+  font-weight: 800;
+  box-shadow: 0 9px 22px rgba(75, 41, 66, 0.16);
+}
+
+.peer-review-card {
+  max-width: 680px;
+}
+
+/* GT table inside thesis callout */
+.thesis-card .gt_table {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.6rem;
+  overflow: hidden;
+}
+
+/* Spacing between research-page sections */
+#published-articles,
+#working-papers,
+#ongoing-projects,
+#other-publications,
+#peer-review {
+  margin-top: 2.8rem;
+}
+
+/* Animation */
+@keyframes publicationCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .publication-card {
+    animation: none !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .publication-card,
+  .working-paper-card,
+  .project-card,
+  .thesis-card,
+  .peer-review-card {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+    padding: 1.05rem;
+  }
+
+  .publication-cover-wrap {
+    justify-content: flex-start;
+  }
+
+  .publication-cover {
+    width: 82px;
+    max-width: 82px;
+  }
+
+  .publication-icon {
+    width: 40px;
+    max-width: 40px;
+  }
+
+  .project-logo {
+    width: 68px;
+    max-width: 68px;
+    max-height: 52px;
+  }
+
+  .publication-content h3 {
+    font-size: 0.98rem !important;
+  }
+
+  .publication-meta {
+    font-size: 0.86rem;
+  }
+
+  .publication-card .callout-body {
+    font-size: 0.85rem;
+  }
+
+  .publication-card .btn + .btn {
+    margin-left: 0;
+    margin-top: 0.35rem;
+  }
+}
