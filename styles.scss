@@ -4,13 +4,20 @@
    Professional academic theme
    ============================================================ */
 
-$primary: #4b2942;        // deep aubergine
-$secondary: #7a6f75;
-$body-bg: #ffffff;        // warm ivory
-$body-color: #252124;
-$link-color: #4b2942;
-$link-hover-color: #b08a3c; // muted gold
-$border-color: #e2d8cf;
+$primary: #12372f;        // deep mineral green
+$secondary: #64736d;
+$body-bg: #ffffff;
+$body-color: #202624;
+$link-color: #12372f;
+$link-hover-color: #2f6f63;
+$border-color: #d8e1dc;
+
+$headings-color: #102a24;
+
+$navbar-bg: $primary;
+$navbar-fg: #ffffff;
+
+$code-color: #24594d;
 
 $font-family-sans-serif: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
   Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -19,14 +26,12 @@ $headings-font-weight: 650;
 $headings-color: #4b2942;
 
 $navbar-bg: $primary;
-$navbar-fg: #ffffff;
 
-$code-color: #8a4b2a;
 
 /* ---- color around images --- */
 
 .aubergine-border {
-  border: 2px solid #4b2942;
+  border: 2px solid #12372f;
   padding: 3px;
   border-radius: 0.45rem;
 }
@@ -38,15 +43,15 @@ $code-color: #8a4b2a;
    ============================================================ */
 
 :root {
-  --site-accent: #4b2942;
-  --site-accent-soft: #f1e8ee;
-  --site-gold: #b08a3c;
+  --site-accent: #12372f;
+  --site-accent-soft: #edf5f2;
+  --site-gold: #2f6f63;
   --site-text: var(--bs-body-color);
   --site-bg: var(--bs-body-bg);
-  --site-muted: #786d74;
-  --site-border: #e2d8cf;
-  --site-soft-bg: #f4ede7;
-  --site-hover-bg: #ece2da;
+  --site-muted: #64736d;
+  --site-border: #d8e1dc;
+  --site-soft-bg: #f3f7f5;
+  --site-hover-bg: #e8f0ec;
 }
 
 body {
@@ -1141,4 +1146,334 @@ img {
     margin-left: 0;
     margin-top: 0.35rem;
   }
+}
+
+/* ============================================================
+   Bigger logos for ongoing projects only
+   ============================================================ */
+
+.project-card {
+  grid-template-columns: 130px minmax(0, 1fr) !important;
+}
+
+.project-card .publication-cover-wrap {
+  justify-content: center;
+  align-items: center;
+}
+
+.project-card .project-logo {
+  width: 115px !important;
+  max-width: 115px !important;
+  max-height: 90px !important;
+  object-fit: contain;
+  padding: 0.45rem;
+  border-radius: 0.7rem;
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid rgba(75, 41, 66, 0.12) !important;
+  box-shadow: 0 8px 20px rgba(75, 41, 66, 0.08) !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .project-card {
+    grid-template-columns: 1fr !important;
+  }
+
+  .project-card .publication-cover-wrap {
+    justify-content: flex-start;
+  }
+
+  .project-card .project-logo {
+    width: 95px !important;
+    max-width: 95px !important;
+    max-height: 75px !important;
+  }
+}
+
+/* ============================================================
+   Scientific deep green theme override
+   Put this at the VERY END of styles.scss
+   ============================================================ */
+
+:root {
+  --site-accent: #12372f;
+  --site-accent-soft: #edf5f2;
+  --site-gold: #2f6f63;
+  --site-muted: #64736d;
+  --site-border: #d8e1dc;
+  --site-soft-bg: #f3f7f5;
+  --site-hover-bg: #e8f0ec;
+}
+
+/* ------------------------------------------------------------
+   Global accents
+   ------------------------------------------------------------ */
+
+#quarto-document-content h1,
+#quarto-document-content h2,
+#quarto-document-content h3,
+#quarto-document-content h4 {
+  color: #102a24 !important;
+}
+
+#quarto-document-content a:not(.btn) {
+  color: #12372f !important;
+}
+
+#quarto-document-content a:not(.btn):hover {
+  color: #2f6f63 !important;
+}
+
+.btn-outline-primary {
+  color: #12372f !important;
+  border-color: #12372f !important;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:active,
+.btn-outline-primary:focus,
+.show > .btn-outline-primary.dropdown-toggle {
+  background-color: #12372f !important;
+  border-color: #12372f !important;
+  color: #ffffff !important;
+}
+
+.btn:focus {
+  box-shadow: 0 0 0 0.2rem rgba(18, 55, 47, 0.22) !important;
+}
+
+
+/* ------------------------------------------------------------
+   TOC
+   ------------------------------------------------------------ */
+
+#quarto-margin-sidebar nav#TOC a:hover,
+#quarto-margin-sidebar nav[role="doc-toc"] a:hover {
+  color: #12372f !important;
+}
+
+#quarto-margin-sidebar nav#TOC .toc-active > a,
+#quarto-margin-sidebar nav[role="doc-toc"] .toc-active > a,
+#quarto-margin-sidebar nav#TOC a.active,
+#quarto-margin-sidebar nav[role="doc-toc"] a.active {
+  color: #12372f !important;
+  border-left-color: #12372f !important;
+}
+
+#quarto-margin-sidebar nav[role="doc-toc"] a.active::before,
+#quarto-margin-sidebar nav[role="doc-toc"] .toc-active > a::before,
+#quarto-margin-sidebar nav#TOC a.active::before,
+#quarto-margin-sidebar nav#TOC .toc-active > a::before {
+  background-color: #12372f !important;
+}
+
+
+/* ------------------------------------------------------------
+   Image borders
+   ------------------------------------------------------------ */
+
+.aubergine-border {
+  border-color: #12372f !important;
+}
+
+
+/* ------------------------------------------------------------
+   Cards: timeline, teaching, publications
+   ------------------------------------------------------------ */
+
+.cv-content,
+.teaching-card,
+.publication-card,
+.working-paper-card,
+.project-card,
+.thesis-card,
+.peer-review-card {
+  background:
+    radial-gradient(circle at top right, rgba(18, 55, 47, 0.055), transparent 36%),
+    rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(18, 55, 47, 0.14) !important;
+  box-shadow: 0 12px 34px rgba(18, 55, 47, 0.065) !important;
+}
+
+.cv-content:hover,
+.teaching-card:hover,
+.publication-card:hover,
+.working-paper-card:hover,
+.project-card:hover,
+.thesis-card:hover,
+.peer-review-card:hover {
+  border-color: rgba(18, 55, 47, 0.34) !important;
+  box-shadow: 0 18px 42px rgba(18, 55, 47, 0.12) !important;
+}
+
+
+/* ------------------------------------------------------------
+   Timeline
+   ------------------------------------------------------------ */
+
+.cv-timeline::before {
+  background: linear-gradient(
+    180deg,
+    #12372f,
+    rgba(18, 55, 47, 0.68),
+    rgba(18, 55, 47, 0.26)
+  ) !important;
+}
+
+.cv-item::before {
+  background: #ffffff !important;
+  border-color: #12372f !important;
+  box-shadow: 0 0 0 5px rgba(18, 55, 47, 0.08) !important;
+}
+
+.cv-date {
+  color: #12372f !important;
+}
+
+.cv-content h3,
+.cv-subcontent strong,
+.teaching-content h3,
+.publication-content h3 {
+  color: #102a24 !important;
+}
+
+
+/* ------------------------------------------------------------
+   Timeline subitems
+   ------------------------------------------------------------ */
+
+.cv-subitem {
+  border-left-color: #12372f !important;
+  background:
+    linear-gradient(90deg, rgba(18, 55, 47, 0.055), transparent 65%),
+    rgba(255, 255, 255, 0.78) !important;
+}
+
+.cv-subdate {
+  color: #12372f !important;
+  background: rgba(18, 55, 47, 0.075) !important;
+  border-color: rgba(18, 55, 47, 0.18) !important;
+}
+
+
+/* ------------------------------------------------------------
+   Teaching
+   ------------------------------------------------------------ */
+
+.teaching-card::before {
+  background: #12372f !important;
+}
+
+.teaching-year {
+  color: #12372f !important;
+  background: rgba(18, 55, 47, 0.075) !important;
+  border-color: rgba(18, 55, 47, 0.18) !important;
+}
+
+.teaching-content strong {
+  color: #12372f !important;
+}
+
+
+/* ------------------------------------------------------------
+   Publication tags and metadata
+   ------------------------------------------------------------ */
+
+.pub-tag {
+  color: #12372f !important;
+  background: rgba(18, 55, 47, 0.075) !important;
+  border-color: rgba(18, 55, 47, 0.17) !important;
+}
+
+.publication-meta {
+  color: #64736d !important;
+}
+
+
+/* ------------------------------------------------------------
+   Publication covers, icons, project logos
+   ------------------------------------------------------------ */
+
+.publication-cover,
+.publication-icon,
+.project-logo {
+  border-color: rgba(18, 55, 47, 0.13) !important;
+  box-shadow: 0 8px 22px rgba(18, 55, 47, 0.10) !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+}
+
+
+/* ------------------------------------------------------------
+   Project details
+   ------------------------------------------------------------ */
+
+.project-details {
+  border-left-color: #12372f !important;
+  background: rgba(18, 55, 47, 0.045) !important;
+}
+
+
+/* ------------------------------------------------------------
+   Callouts
+   ------------------------------------------------------------ */
+
+.callout-note {
+  border-left-color: #12372f !important;
+}
+
+.callout-note .callout-title-container,
+.callout-note .callout-icon-container {
+  color: #12372f !important;
+}
+
+.publication-card .callout.callout-note {
+  border-color: rgba(18, 55, 47, 0.20) !important;
+  border-left-color: #12372f !important;
+  background: rgba(18, 55, 47, 0.045) !important;
+}
+
+.publication-card .callout.callout-note .callout-header {
+  color: #12372f !important;
+}
+
+.publication-card .callout.callout-note .callout-title-container {
+  color: #12372f !important;
+}
+
+.publication-card .callout.callout-note .callout-icon-container,
+.publication-card .callout.callout-note .callout-btn-toggle,
+.publication-card .callout.callout-note .callout-toggle {
+  color: #12372f !important;
+}
+
+.publication-card .callout.callout-note:has(.callout-collapse.show) {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-left-color: #12372f !important;
+}
+
+.publication-card .callout.callout-note:has(.callout-collapse.show) .callout-header {
+  border-bottom-color: rgba(18, 55, 47, 0.12) !important;
+}
+
+
+/* ------------------------------------------------------------
+   Peer review icon
+   ------------------------------------------------------------ */
+
+.peer-review-icon {
+  background: linear-gradient(135deg, #12372f, #2f6f63) !important;
+  box-shadow: 0 9px 22px rgba(18, 55, 47, 0.18) !important;
+}
+
+
+/* ------------------------------------------------------------
+   Tables
+   ------------------------------------------------------------ */
+
+thead {
+  border-bottom-color: #12372f !important;
+}
+
+.table > :not(caption) > * > * {
+  border-bottom-color: #d8e1dc !important;
 }
